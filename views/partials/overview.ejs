@@ -1,0 +1,74 @@
+<table class="product-table">
+<thead>
+  <tr>
+    <!-- Name -->
+    <th>
+      <a href="/?searchQuery=<%= query %>&sort=name&order=<%= sortField === 'name' && sortOrder === 'asc' ? 'desc' : 'asc' %>">
+        Name
+        <% if (sortField === 'name') { %>
+          <%= sortOrder === 'asc' ? '↑' : '↓' %>
+        <% } %>
+      </a>
+    </th>
+    <!-- Category -->
+    <th>
+      <a href="/?searchQuery=<%= query %>&sort=category&order=<%= sortField === 'category' && sortOrder === 'asc' ? 'desc' : 'asc' %>">
+        Category
+        <% if (sortField === 'category') { %>
+          <%= sortOrder === 'asc' ? '↑' : '↓' %>
+        <% } %>
+      </a>
+    </th>
+    <!-- Price -->
+    <th>
+      <a href="/?searchQuery=<%= query %>&sort=price&order=<%= sortField === 'price' && sortOrder === 'asc' ? 'desc' : 'asc' %>">
+        Price
+        <% if (sortField === 'price') { %>
+          <%= sortOrder === 'asc' ? '↑' : '↓' %>
+        <% } %>
+      </a>
+    </th>
+    <!-- Available -->
+    <th>
+      <a href="/?searchQuery=<%= query %>&sort=isAvailable&order=<%= sortField === 'isAvailable' && sortOrder === 'asc' ? 'desc' : 'asc' %>">
+        Available
+        <% if (sortField === 'isAvailable') { %>
+          <%= sortOrder === 'asc' ? '↑' : '↓' %>
+        <% } %>
+      </a>
+    </th>
+    <th>Actions</th>
+    <% if (session.user.role === "ADMIN") { %>
+          <th>Edit</th>
+    <% } else { %>
+      
+    <% } %>
+  </tr>
+</thead>
+    <tbody>
+        <% bikes.forEach(bike => { %>
+            <tr>
+                <td class="bike-info style name-badge"><img class="imageUrl" src="<%= bike.imageUrl%>" alt="bikeImg"><%= bike.name %></td>
+                <td><a href="/categories" class="Edit style"><%= bike.category%></a></td>
+                <td class="style price-badge"><%= bike.price%>€</td>
+                <td>
+                    <% if(bike.isAvailable){ %>
+                       <span class="status-avaliable style">Availible</span> 
+                    <% } else { %>    
+                       <span class="status-not-avaliable style">Out of stock</span> 
+                    <% }  %>
+                    %>
+                </td>
+                <td><a href="/product/<%= bike.id%>" class="view-link style">View</a></td>
+                <% if (session.user.role === "ADMIN") { %>
+                  <td><a href="/edit/<%= bike.id%>" class="Edit style">Edit</a></td>
+                <% } else { %>
+                  
+                <% } %>
+            </tr>
+        <%}) %>
+    </tbody>
+</table> 
+
+
+

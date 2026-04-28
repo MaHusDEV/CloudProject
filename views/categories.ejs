@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/categories.css">
+    <title>Categories</title>
+</head>
+<body  class="main-container">
+    <%- include("partials/navigation")%>
+    <main class="categories-container">
+        <% bikeType.forEach((bike)=>{%>
+            <div class="categories-block">
+                <img class="logo-img" src="<%= bike.logoUrl %>" alt="<%= bike.id %> Logo">
+                <p class="font-style"><%= bike.category%></p>
+                <span class="font-style">    
+                            <% if(bike.isProtective) { %>
+                            Is protective: <span class="status-avaliable">⬤</span>
+                            <% } else { %>
+                            Is protective: <span class="status-not-avaliable">⬤</span>
+                            <% } %>
+                        </span>
+                <p class="font-style"><%= bike.originCountry%></p>
+                <p class="font-style">Guaranteed years of service: <%= bike.warrantyYears%></p>
+                <p class="font-style"><%= bike.description%></p>    
+            </div>
+        <% })%>
+    </main>
+    <%- include("partials/footer") %>
+</body>
+</html>

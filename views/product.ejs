@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <title>Bike</title>
+</head>
+<body class="main-container">
+    <%- include("partials/navigation")%>
+    <main>
+        <section class="product-container">
+            <p class="prod-name"><%= bike.name%></p>
+            <img src="<%= bike.imageUrl %>" alt="<%= bike.name %>" class="prod-pic">
+            
+            <div class="prod-info">
+                <div class="tag-container">
+                    <div><span class="category tag-font-style"><%= bike.category %></span></div>
+                    <div>
+                        <% bike.tags.forEach(tag => { %>
+                            <span class="tag tag-font-style"><%= tag %></span>
+                        <% }) %>
+                    </div>
+                </div>
+                <p class="description"><%= bike.description%> Released in <%= bike.releaseDate%>.</p>
+                
+                <div class="important-container">
+                    <div class="price">
+                        <span class="tag-font-style">
+                            <%= bike.price%>€
+                        </span>
+                    </div>
+                    <div class="avaliable">
+                        <span class="tag-font-style">    
+                            <% if(bike.isAvailable) { %>
+                            Availability: <span class="status-avaliable">⬤</span>
+                            <% } else { %>
+                            Availability: <span class="status-not-avaliable">⬤</span>
+                            <% } %>
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <%- include("partials/footer")%>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "mongodb": "^7.0.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/browser-sync": "^2.29.1",
+    "@types/connect-livereload": "^0.6.3",
+    "@types/connect-mongodb-session": "^2.4.8",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.18.2",
+    "@types/livereload": "^0.9.5",
+    "@types/node": "^24.10.3",
+    "@types/readline-sync": "^1.4.8",
+    "browser-sync": "^3.0.4",
+    "connect-livereload": "^0.6.1",
+    "cookie-parser": "^1.4.7",
+    "install": "^0.13.0",
+    "livereload": "^0.10.3",
+    "nodemon": "^3.1.10",
+    "npm": "^11.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "name": "project-webontwikkeling-2025-mahusdev",
+  "version": "1.0.0",
+  "description": "## Installation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

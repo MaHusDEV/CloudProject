@@ -1,0 +1,12 @@
+<section class="search">
+    <form action="/" method="GET">
+        <input 
+            type="text"
+            name="searchQuery" 
+            placeholder="Search for bikes..." 
+            value="<%= typeof query !== 'undefined' ? query : '' %>"
+            class="search-input"
+        >
+        <button type="submit" class="search-btn">Search</button>
+    </form>
+</section>

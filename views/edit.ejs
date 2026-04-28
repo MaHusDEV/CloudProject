@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/edit.css">
+    <title>Edit</title>
+</head>
+<body class="main-container">
+    <%- include("partials/navigation")%>
+    <h1>Edit Bike: <%= bike.name %></h1>
+
+    <form method="POST" action="/edit/<%= bike.id %>" class="edit-form">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%= bike.name %>" />
+
+        <label>Category:</label>
+        <select name="category">
+            <option value="city" <%= bike.category === "city" ? "selected" : "" %>>City</option>
+            <option value="mtb" <%= bike.category === "mtb" ? "selected" : "" %>>MTB</option>
+            <option value="road" <%= bike.category === "road" ? "selected" : "" %>>Road</option>
+        </select>
+
+        <label>Price:</label>
+        <input type="number" name="price" value="<%= bike.price %>"/>
+
+        <label>Description:</label>
+        <textarea name="description"><%= bike.description %></textarea>
+
+        <label>Available:</label>
+        <select name="isAvailable">
+            <option value="true" <%= bike.isAvailable ? "selected" : "" %>>Yes</option>
+            <option value="false" <%= !bike.isAvailable ? "selected" : "" %>>No</option>
+        </select>
+
+        <button type="submit">Save</button>
+    </form>
+    <%- include("partials/footer")%>
+</body>
+</html>
+

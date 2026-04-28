@@ -1,0 +1,14 @@
+<header>
+    <nav class="navigation-bar">
+        <ul>
+            <li><a href="/" class="nav-btn">Home</a></li>
+            <li><a href="/categories" class="nav-btn">Categories</a></li>
+            <% if (session && session.user) { %>
+            <li><a href="/logout" class="nav-btn">Logout</a></li>
+            <% } else { %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            <% } %>
+        </ul>
+    </nav>
+</header>

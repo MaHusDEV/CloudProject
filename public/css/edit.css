@@ -1,0 +1,61 @@
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #0d2a4c;
+}
+.edit-form {
+    width: 600px;
+    height: 600px;
+    background: rgb(100, 169, 242);
+    padding: 25px;
+    margin: 30px auto;
+    border-radius: 12px;
+    border: 2px solid  rgb(100, 169, 242);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-family: Arial, sans-serif;
+}
+.edit-form label {
+    font-weight: bold;
+    color: #0d2a4c;
+}
+.edit-form input,
+.edit-form textarea,
+.edit-form select {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #93c5fd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+}
+.edit-form input:focus,
+.edit-form textarea:focus,
+.edit-form select:focus {
+    border-color: #0a99ff;
+    box-shadow: 0 0 6px rgba(0,148,255,0.4);
+}
+.edit-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+.edit-form button {
+    margin-top: 10px;
+    padding: 12px;
+    background: #0a99ff;
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.edit-form button:hover {
+    background: #007ad1;
+    transform: scale(1.03);
+}
